@@ -1,10 +1,18 @@
 class TaxonomiesController < ApplicationController
-  before_action :set_taxonomy, only: [:show, :edit, :update, :destroy]
+  before_action :set_taxonomy, only: [:species, :show, :edit, :update, :destroy]
 
   # GET /taxonomies
   # GET /taxonomies.json
   def index
     @taxonomies = Taxonomy.all
+  end
+
+  def species
+    respond_to do |format|
+      format.json do
+        render json: @taxonomy.species.pluck(:id, :name), status: :ok
+      end
+    end
   end
 
   # GET /taxonomies/1

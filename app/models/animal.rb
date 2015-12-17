@@ -6,7 +6,7 @@ class Animal < ActiveRecord::Base
   
 
   def scientific_name
-    [species.taxonomy.genus, species.name, subspecies.name].join(" ").strip
+    [species.taxonomy.genus, species.name, subspecies.display_name].join(" ").strip
   end
   
 end

@@ -1,10 +1,18 @@
 class SpeciesController < ApplicationController
-  before_action :set_species, only: [:show, :edit, :update, :destroy]
+  before_action :set_species, only: [:show, :subspecies, :edit, :update, :destroy]
 
   # GET /species
   # GET /species.json
   def index
     @species = Species.all
+  end
+
+  def subspecies
+    respond_to do |format|
+      format.json do
+        render json: @species.subspecies.pluck(:id, :name), status: :ok
+      end
+    end
   end
 
   # GET /species/1

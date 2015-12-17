@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151217083856) do
     t.integer  "species_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "nominal"
+    t.boolean  "nominal",    default: false
   end
 
   create_table "taxonomies", force: true do |t|

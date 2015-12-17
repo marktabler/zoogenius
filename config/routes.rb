@@ -1,7 +1,15 @@
 Zoogenius::Application.routes.draw do
-  resources :taxonomies
+  resources :taxonomies do
+    member do
+      get 'species'
+    end
+  end
 
-  resources :species
+  resources :species do
+    member do
+      get 'subspecies'
+    end
+  end
 
   resources :subspecies
 
