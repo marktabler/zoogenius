@@ -29,3 +29,8 @@ superfox = Animal.create(name: "Fictional",
 )
 
 zoo = Zoo.create(name: "Oregon Zoo")
+
+Animal.all.each do |a|
+  a.zoo = zoo
+  a.save
+end
