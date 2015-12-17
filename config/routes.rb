@@ -1,4 +1,5 @@
 Zoogenius::Application.routes.draw do
+  root 'zoos#index'
   resources :taxonomies do
     member do
       get 'species'

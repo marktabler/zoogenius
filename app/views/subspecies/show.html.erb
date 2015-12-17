@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subspecies.name || "(Nominal)" %>
+</p>
+
+<p>
+  <strong>Species:</strong>
+  <%= @subspecies.species.name %>
+</p>
+
+<%= link_to 'Edit', edit_subspecy_path(@subspecies) %> |
+<%= link_to 'Back', species_index_path %>
