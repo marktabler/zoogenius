@@ -11,15 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217065656) do
+ActiveRecord::Schema.define(version: 20151217083856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "animals", force: true do |t|
     t.string   "name"
-    t.string   "classification_type"
-    t.integer  "classification_id"
+    t.integer  "subspecies_id"
     t.integer  "zoo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151217065656) do
     t.integer  "species_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "nominal"
   end
 
   create_table "taxonomies", force: true do |t|

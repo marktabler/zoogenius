@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Classification type</th>
-      <th>Classification</th>
+      <th>Subspecies ID</th>
       <th>Zoo</th>
       <th></th>
       <th></th>
@@ -17,8 +16,7 @@
     <% @animals.each do |animal| %>
       <tr>
         <td><%= animal.name %></td>
-        <td><%= animal.classification_type %></td>
-        <td><%= animal.classification_id %></td>
+        <td><%= animal.subspecies_id %></td>
         <td><%= animal.zoo_id %></td>
         <td><%= link_to 'Show', animal %></td>
         <td><%= link_to 'Edit', edit_animal_path(animal) %></td>

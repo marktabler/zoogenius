@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  classification_type: MyString
-  classification_id: 1
+  subspecies_id: 1
   zoo_id: 1
 
 two:
   name: MyString
-  classification_type: MyString
-  classification_id: 1
+  subspecies_id: 1
   zoo_id: 1
