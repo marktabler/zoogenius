@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Subspecies ID</th>
+      <th>Scientific Name</th>
       <th>Zoo</th>
       <th></th>
       <th></th>
@@ -16,8 +16,8 @@
     <% @animals.each do |animal| %>
       <tr>
         <td><%= animal.name %></td>
-        <td><%= animal.subspecies_id %></td>
-        <td><%= animal.zoo_id %></td>
+        <td><%= animal.scientific_name.truncate(20) %></td>
+        <td><%= animal.zoo.name.truncate(20) %></td>
         <td><%= link_to 'Show', animal %></td>
         <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
         <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>

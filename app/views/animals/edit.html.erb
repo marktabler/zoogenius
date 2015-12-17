@@ -4,3 +4,11 @@
 
 <%= link_to 'Show', @animal %> |
 <%= link_to 'Back', animals_path %>
+
+<%= javascript_tag do %>
+  $('#taxonomy_id option[value=<%=@animal.taxonomy.id%>]').prop('selected', true);
+  populateSpecies(<%=@animal.taxonomy.id%>);
+  $('#species_id option[value=<%=@animal.species.id%>]').prop('selected', true);
+  populateSubSpecies(<%=@animal.species.id%>);
+  $('#animal_subspecies_id option[value=<%=@animal.subspecies_id%>]').prop('selected', true);
+<% end %>

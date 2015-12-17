@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Subspecies ID:</strong>
-  <%= @animal.subspecies_id %>
+  <strong><%=@animal.name_type %> Name:</strong>
+  <%= @animal.scientific_name %>
 </p>
 
 <p>
   <strong>Zoo:</strong>
-  <%= @animal.zoo_id %>
+  <%= @animal.zoo.name %>
 </p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |

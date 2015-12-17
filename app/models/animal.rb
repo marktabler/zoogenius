@@ -4,9 +4,16 @@ class Animal < ActiveRecord::Base
   delegate :species, to: :subspecies
   delegate :taxonomy, to: :species
   
+  def name_type
+    if subspecies.nominal?
+      "Binomial"
+    else
+      "Trinomial"
+    end
+  end
 
   def scientific_name
-    [species.taxonomy.genus, species.name, subspecies.display_name].join(" ").strip
+    [species.taxonomy.genus, species.name, subspecies.name].join(" ").strip
   end
   
 end

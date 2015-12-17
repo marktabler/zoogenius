@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :species %><br>
-    <%= select_tag :species_id %>
+    <%= select_tag :species_id, [] %>
   </div>
 
   <div class="field">
@@ -65,14 +65,13 @@
   var populateSubSpecies = function(value) { 
     $.get("/species/" + value + "/subspecies.json")
     .done(function(data){
-    console.log(data)
     data.forEach(wrapWithOptionTags);
     $('#animal_subspecies_id').empty().append(data);
     });
   };
-  
-  $('#taxonomy_id').change( function() { populateSpecies($('#taxonomy_id').val()) })
-  $('#species_id').change( function() { populateSubSpecies($('#species_id').val()) })
+
+  $('#taxonomy_id').change( function() { populateSpecies($('#taxonomy_id').val()) });
+  $('#species_id').change( function() { populateSubSpecies($('#species_id').val()) });
 
 <% end %>
 
