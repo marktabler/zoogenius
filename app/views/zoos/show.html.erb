@@ -5,5 +5,20 @@
   <%= @zoo.name %>
 </p>
 
+<p>
+  <strong>Unique Species:</strong>
+  <%= @zoo.unique_species_count %>
+</p>
+
+<p>
+  <strong>List of Animals:</strong>
+  <ul>
+    <% @zoo.animals.each do |animal| %>
+    <li><%= animal.name %> the <%= animal.scientific_name %></li>
+    <% end %>
+  </ul>
+</p>
+
+
 <%= link_to 'Edit', edit_zoo_path(@zoo) %> |
 <%= link_to 'Back', zoos_path %>

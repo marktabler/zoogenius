@@ -15,7 +15,7 @@
     <% @species.each do |species| %>
       <tr>
         <td><%= species.name %></td>
-        <td><%= species.taxonomy_id %></td>
+        <td><%= species.taxonomy.genus %></td>
         <td><%= link_to 'Show', species %></td>
         <td><%= link_to 'Edit', edit_species_path(species) %></td>
         <td><%= link_to 'Destroy', species, method: :delete, data: { confirm: 'Are you sure?' } %></td>
