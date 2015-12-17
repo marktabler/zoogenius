@@ -1,0 +1,35 @@
+<h1>Listing taxonomies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Genus</th>
+      <th>Family</th>
+      <th>Order</th>
+      <th>Tclass</th>
+      <th>Phylum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taxonomies.each do |taxonomy| %>
+      <tr>
+        <td><%= taxonomy.genus %></td>
+        <td><%= taxonomy.family %></td>
+        <td><%= taxonomy.order %></td>
+        <td><%= taxonomy.tclass %></td>
+        <td><%= taxonomy.phylum %></td>
+        <td><%= link_to 'Show', taxonomy %></td>
+        <td><%= link_to 'Edit', edit_taxonomy_path(taxonomy) %></td>
+        <td><%= link_to 'Destroy', taxonomy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taxonomy', new_taxonomy_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Genus:</strong>
+  <%= @taxonomy.genus %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= @taxonomy.family %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @taxonomy.order %>
+</p>
+
+<p>
+  <strong>Tclass:</strong>
+  <%= @taxonomy.tclass %>
+</p>
+
+<p>
+  <strong>Phylum:</strong>
+  <%= @taxonomy.phylum %>
+</p>
+
+<%= link_to 'Edit', edit_taxonomy_path(@taxonomy) %> |
+<%= link_to 'Back', taxonomies_path %>

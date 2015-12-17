@@ -1,0 +1,27 @@
+<h1>Listing zoos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zoos.each do |zoo| %>
+      <tr>
+        <td><%= zoo.name %></td>
+        <td><%= link_to 'Show', zoo %></td>
+        <td><%= link_to 'Edit', edit_zoo_path(zoo) %></td>
+        <td><%= link_to 'Destroy', zoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zoo', new_zoo_path %>
