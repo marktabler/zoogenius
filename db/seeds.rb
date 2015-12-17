@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+dog = Animal.create(name: "Fido", subspecies:
+  Subspecies.create(name: "Familiaris", species:
+    Species.create(name: "Lupus", taxonomy:
+      Taxonomy.create(genus: "Canis", family: "Canidae", order: "Carnivora", tclass: "Mammalia", phylum: "Cordata")
+    )
+  )
+)
+
+wolf = Animal.create(name: "Ram Alpha", subspecies: Subspecies.create(nominal: true, species: Species.find_by_name("Lupus")))
